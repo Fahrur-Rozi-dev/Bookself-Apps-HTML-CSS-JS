@@ -1,0 +1,284 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.navbar {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar div {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search_section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.search_section h2 {
+    margin: 0;
+}
+
+.search_section form {
+    display: flex;
+    align-items: center;
+}
+
+.search_section input {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search_section button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.search_section button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    padding: 20px;
+}
+
+.search-results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.book_shelf {
+    margin-bottom: 20px;
+}
+
+.book_shelf h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.book_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.book_item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 10px);
+    box-sizing: border-box;
+}
+
+.book_item h3 {
+    margin-top: 0;
+}
+
+.book_item p {
+    margin: 5px 0;
+}
+
+.book_item button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.book_item button.edit_button {
+    background-color: #ffc107;
+}
+
+.book_item button.edit_button:hover {
+    background-color: #e0a800;
+}
+
+.book_item button:hover {
+    background-color: #0056b3;
+}
+
+.book_item button.mark_complete {
+    background-color: #28a745;
+}
+
+.book_item button.mark_complete:hover {
+    background-color: #218838;
+}
+
+form#inputAddBook {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form#inputAddBook div {
+    margin-bottom: 15px;
+}
+
+form#inputAddBook label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form#inputAddBook input[type="text"],
+form#inputAddBook input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form#inputAddBook input[type="radio"] {
+    margin-right: 5px;
+}
+
+form#inputAddBook button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+form#inputAddBook button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form#editForm {
+    display: flex;
+    flex-direction: column;
+}
+
+form#editForm label {
+    margin: 10px 0 5px;
+}
+
+form#editForm input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+form#editForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form#editForm button[type="button"] {
+    background-color: #dc3545;
+}
+
+form#editForm button[type="button"]:hover {
+    background-color: #c82333;
+}
+
+form#editForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .book_item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .book_item {
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search_section {
+        width: 100%;
+    }
+
+    .search_section form {
+        width: 100%;
+    }
+
+    .search_section input {
+        width: calc(100% - 80px);
+    }
+
+    .search_section button {
+        width: 60px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+.margin-top {
+    margin-top: 10px;
+}

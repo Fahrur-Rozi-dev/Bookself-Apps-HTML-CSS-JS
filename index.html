@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>Bookself Apps</title>
+</head>
+<body>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Buku</h2>
+            <form id="editForm">
+                <label for="editTitle">Judul:</label>
+                <input type="text" id="editTitle" name="editTitle" value="${book.title}">
+                <label for="editAuthor">Penulis:</label>
+                <input type="text" id="editAuthor" name="editAuthor" value="${book.author}">
+                <label for="editYear">Tahun Terbit:</label>
+                <input type="text" id="editYear" name="editYear" value="${book.year}">
+                <button id="deleteBookButton" type="button">Hapus</button>
+                <button type="submit">Simpan Perubahan</button>
+            </form>
+        </div>
+    </div>
+    
+      
+    <nav class="navbar">
+        <div>Bookself Apps</div>
+        <section class="search_section">
+            <h2>Cari Buku</h2>
+            <form id="searchBook">
+                <input id="searchBookTitle" type="text" placeholder="Masukkan judul">
+                <button id="searchSubmit" type="submit">Cari</button>
+            </form>
+        </section>
+    </nav>
+
+    <div id="searchResults" class="search-results-container"></div>
+
+    
+    <div class="container">
+        <section class="book_shelf">
+            <h2>Buku Yang Sudah Selesai dibaca.</h2>
+            <div id="completeBookshelfList" class="book_list">
+            </div>
+        </section>
+        <section class="book_shelf">
+            <h2>Buku Yang Belum selesai dibaca.</h2>
+            <div id="incompleteBookshelfList" class="book_list">
+            </div>
+          </section>
+        <section>
+            <form id="inputAddBook">
+                <div>
+                    <div class="book_shelf text-center">
+                        <h2>Masukan Buku Baru</h2>
+                    </div>
+                    <label for="inputJudul">Judul</label>
+                    <input type="text" id="inputJudul" placeholder="Masukkan Judul" required>
+                </div>
+                <div>
+                    <label for="inputPenulis">Penulis</label>
+                    <input type="text" id="inputPenulis" placeholder="Masukkan Nama Penulis" required>
+                </div>
+                <div>
+                    <label for="inputTahun">Tahun</label>
+                    <input type="number" id="inputTahun" placeholder="Masukkan tahun" required>
+                </div>
+                <label>
+                    <input type="radio" name="status" value="sudah_dibaca">
+                    Selesai dibaca.
+                </label>
+                <label>
+                    <input type="radio" name="status" value="belum_dibaca">
+                    Belum selesai dibaca.
+                </label>
+                
+                <button type="submit">Kirim</button>
+                
+            </form>
+        </section>
+    </div>
+    
+    <script src="./src/index.js"></script>
+</body>
+</html>
